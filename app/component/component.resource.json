@@ -1,0 +1,18 @@
+{
+  "get": {
+    "url": "/network/ssh",
+    "type": "model"
+  },
+  "put": {
+    "url": "/network/ssh",
+    "type": "model"
+  },
+  "fields": [{
+    "key": "enable",
+    "type": "switch",
+    "templateOptions": {
+      "label": "SSH_FORM_LABEL_ENABLE"
+    }
+  }]
+}
+
