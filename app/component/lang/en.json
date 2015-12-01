@@ -1,4 +1,6 @@
 {
+  "SSH": "SSH",
+  "SSH_FORM_SETTING": "Setting",
   "SSH_FORM_LABEL_ENABLE": "Enable",
   "SSH_FORM_SAVE": "Save"
 }

@@ -1,10 +1,10 @@
 {
   "get": {
-    "url": "/network/ssh",
+    "url": "/network/sshd",
     "type": "model"
   },
   "put": {
-    "url": "/network/ssh",
+    "url": "/network/sshd",
     "type": "model"
   },
   "fields": [{

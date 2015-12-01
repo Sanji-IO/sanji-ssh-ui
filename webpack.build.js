@@ -6,16 +6,13 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var bourbon = require('node-bourbon').includePaths;
 var config = require('./webpack.config.js');
 
-config.devtool = 'eval-source-map';
+config.devtool = 'source-map';
 config.entry = {
   'sanji-ui': './component/index.js'
 };
 config.output.filename = 'sanji-ssh-ui.js';
-config.output.library = 'sjSsh';
 config.output.libraryTarget = 'umd';
-config.externals = {
-  'sanji-core-ui': 'sjCore'
-};
+config.externals = ['sanji-core-ui'];
 
 config.module.loaders = [
   {
