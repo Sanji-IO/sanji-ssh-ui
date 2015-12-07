@@ -1,9 +1,8 @@
-const $inject = ['$q', 'rest', 'exception', '_', 'pathToRegexp'];
-const config = require('./component.resource.json');
+const $inject = ['$q', 'rest', 'exception', '_', 'pathToRegexp', 'resource'];
 class SshService {
   constructor(...injects) {
     SshService.$inject.forEach((item, index) => this[item] = injects[index]);
-    switch(config.get.type) {
+    switch(this.resource.get.type) {
       case 'collection':
         this.data = [];
         break;
@@ -16,6 +15,7 @@ class SshService {
   }
 
   _transform(data) {
+    let config = this.resource;
     switch(config.get.type) {
       case 'collection':
         return this._.map(data, (item, index) => {
@@ -45,7 +45,7 @@ class SshService {
   }
 
   get() {
-    let toPath = this.pathToRegexp.compile(config.get.url);
+    let toPath = this.pathToRegexp.compile(this.resource.get.url);
     return this.rest.get(toPath(), (__DEV__) ? 'http://private-15522-sanjiapi.apiary-mock.com' : undefined)
     .then(res => {
       this.data = this._transform(res.data);
@@ -57,7 +57,7 @@ class SshService {
   }
 
   update(data) {
-    let toPath = this.pathToRegexp.compile(config.put.url);
+    let toPath = this.pathToRegexp.compile(this.resource.put.url);
     let path = (undefined !== data.content.id) ? toPath({id: data.content.id}) : toPath();
     return this.rest.put(path, data.content, data.formOptions.files, (__DEV__) ? 'http://private-15522-sanjiapi.apiary-mock.com' : undefined)
     .catch(err => {

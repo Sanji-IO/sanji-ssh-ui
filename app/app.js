@@ -2,6 +2,7 @@ import 'angular-material.css';
 import 'toastr.scss';
 import './app.scss';
 import 'angular';
+import 'sanji-core-ui';
 import component from './component';
 
 let app = angular.module('webapp', [component]);

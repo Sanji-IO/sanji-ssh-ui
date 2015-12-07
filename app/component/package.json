@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "title": "SSH",
+  "author": {
+    "name": "Zack Yang",
+    "email": "zack9433@gmail.com"
+  },
+  "image": "http://placehold.it/220x150",
+  "content": "The titles of Washed Out breakthrough song and the first single from Paracosm share the",
+  "route": {
+    "state": "application.ssh",
+    "url": "/ssh"
+  },
+  "authenticate": ["admin"],
+  "files": ["sanji-ssh-ui.js"]
+}

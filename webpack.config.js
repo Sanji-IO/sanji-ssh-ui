@@ -8,7 +8,7 @@ var appRoot = path.join(__dirname, 'app');
 var config = {
   context: appRoot,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'sanji-ssh-ui'),
     filename: 'sanji-ssh-ui.js'
   },
   resolve: {

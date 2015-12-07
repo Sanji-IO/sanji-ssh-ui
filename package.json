@@ -14,8 +14,9 @@
   "scripts": {
     "test": "NODE_ENV=test karma start",
     "test:once": "karma start",
-    "prebuild": "rm -rf dist && mkdir dist",
+    "prebuild": "rm -rf sanji-ssh-ui && mkdir sanji-ssh-ui",
     "build": "NODE_ENV=production webpack --config webpack.build.js --display-modules",
+    "postbuild": "cp ./app/component/package.json ./sanji-ssh-ui/",
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements 90 --branches 90 --functions 90 --lines 90",
     "report-coverage": "cat ./coverage/lcov.info | codecov",

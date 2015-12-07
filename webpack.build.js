@@ -11,8 +11,6 @@ config.entry = {
   'sanji-ui': './component/index.js'
 };
 config.output.filename = 'sanji-ssh-ui.js';
-config.output.libraryTarget = 'umd';
-config.externals = ['sanji-core-ui'];
 
 config.module.loaders = [
   {
@@ -25,5 +23,10 @@ config.plugins.push(
   new ExtractTextPlugin('sanji-ssh-ui.css'),
   new WebpackNotifierPlugin({title: 'Webpack'}),
   new webpack.optimize.DedupePlugin()
+  // new webpack.optimize.UglifyJsPlugin({
+    // compress: {
+      // warnings: false
+    // }
+  // })
 );
 module.exports = config;
